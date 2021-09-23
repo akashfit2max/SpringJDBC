@@ -18,3 +18,7 @@ Solutions :
 
 ![image](https://user-images.githubusercontent.com/36466687/134451742-4986ee44-9a65-4b93-a9bd-d8796ee98812.png)
 
+
+JdbcTemplate mehod :
+- update() -> insert, update, delete
+- execute() -> select queries
