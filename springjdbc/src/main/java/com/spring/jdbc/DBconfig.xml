@@ -16,7 +16,7 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/akash" />
 		<property name="username" value="root" />
 		<property name="password" value="aks123" />
-
+ 
 	</bean>
 
 	<!-- you can use name of id and we have to add datasource -->

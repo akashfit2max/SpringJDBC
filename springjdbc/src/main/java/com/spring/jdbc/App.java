@@ -24,10 +24,21 @@ public class App {
 //	System.out.println("num of rows afected....." + res);
 
 //	using interface
+
 	StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
-	Student student = new Student(119, "john", "lucknow");
-	int res = studentDao.insert(student);
-	System.out.println("student added" + res);
+//	Student student = new Student(119, "john", "lucknow");
+//	int res = studentDao.insert(student);
+//	System.out.println("student added" + res);
+
+//	updating data
+//	Student student = new Student(2, "subham", "jammu");
+//	int res = studentDao.chnage(student);
+//	System.out.println("data updated..... " + res);
+
+//	deleting data
+	Student student = new Student(2, "subham", "jammu");
+	int re = studentDao.remove(student);
+	System.out.println("data removed...... " + re);
 
     }
 }
