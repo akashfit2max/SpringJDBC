@@ -3,7 +3,7 @@ package com.spring.jdbc;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
@@ -14,7 +14,11 @@ public class App {
 
 //	getting the object
 
-	ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/DBconfig.xml");
+//	ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/DBconfig.xml");
+
+//	using javaConfig rather than using xml
+	ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
+
 //	jdbctemplate is a spring predefined class
 //	JdbcTemplate template = context.getBean("jbcTemplate", JdbcTemplate.class);
 
@@ -25,7 +29,7 @@ public class App {
 //	int res = template.update(query, 13, "anju Sahoo", "kanpur");
 //	System.out.println("num of rows afected....." + res);
 
-//	using interface
+//	using interface studentDao jisme are insert,delete,update,selecrt operations gho rahe h
 
 	StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
