@@ -8,6 +8,8 @@ public interface StudentDao {
 
     public int chnage(Student student);
 
-    public int remove(Student student);
+    public int remove(int studentId);
+
+    public Student selectStudent(int studentId);
 
 }

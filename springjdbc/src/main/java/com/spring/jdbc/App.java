@@ -36,9 +36,13 @@ public class App {
 //	System.out.println("data updated..... " + res);
 
 //	deleting data
-	Student student = new Student(2, "subham", "jammu");
-	int re = studentDao.remove(student);
-	System.out.println("data removed...... " + re);
+//	Student student = new Student();
+//	student.setId(19);
+//	int re = studentDao.remove(student.getId());
+//	System.out.println("data removed...... " + re);
+
+	Student student = studentDao.selectStudent(23);
+	System.out.println(student);
 
     }
 }
