@@ -1,5 +1,7 @@
 package com.spring.jdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -26,7 +28,9 @@ public class App {
 //	using interface
 
 	StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
-//	Student student = new Student(119, "john", "lucknow");
+
+//	insert data
+//	Student student = new Student(110, "mari", "lucknow");
 //	int res = studentDao.insert(student);
 //	System.out.println("student added" + res);
 
@@ -41,8 +45,16 @@ public class App {
 //	int re = studentDao.remove(student.getId());
 //	System.out.println("data removed...... " + re);
 
-	Student student = studentDao.selectStudent(23);
-	System.out.println(student);
+//	Student student = studentDao.selectStudent(23);
+//	System.out.println(student);
+
+	System.out.println();
+	System.out.println("all students");
+	List<Student> allStudents = studentDao.selectAllStudents();
+//	System.out.println(allStudents);
+	for (Student s : allStudents) {
+	    System.out.println(s);
+	}
 
     }
 }
