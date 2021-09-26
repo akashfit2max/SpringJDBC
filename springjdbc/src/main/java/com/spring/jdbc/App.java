@@ -9,15 +9,15 @@ import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
 
 public class App {
-    public static void main(String[] args) {
-	System.out.println("Spring JDBC");
+	public static void main(String[] args) {
+		System.out.println("Spring JDBC");
 
 //	getting the object
 
 //	ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/DBconfig.xml");
 
 //	using javaConfig rather than using xml
-	ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
 
 //	jdbctemplate is a spring predefined class
 //	JdbcTemplate template = context.getBean("jbcTemplate", JdbcTemplate.class);
@@ -31,12 +31,12 @@ public class App {
 
 //	using interface studentDao jisme are insert,delete,update,selecrt operations gho rahe h
 
-	StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
 //	insert data
-//	Student student = new Student(110, "mari", "lucknow");
-//	int res = studentDao.insert(student);
-//	System.out.println("student added" + res);
+		Student student = new Student(1, "mari", "lucknow");
+		int res = studentDao.insert(student);
+		System.out.println("student added" + res);
 
 //	updating data
 //	Student student = new Student(2, "subham", "jammu");
@@ -52,13 +52,13 @@ public class App {
 //	Student student = studentDao.selectStudent(23);
 //	System.out.println(student);
 
-	System.out.println();
-	System.out.println("all students");
-	List<Student> allStudents = studentDao.selectAllStudents();
+		System.out.println();
+		System.out.println("all students");
+		List<Student> allStudents = studentDao.selectAllStudents();
 //	System.out.println(allStudents);
-	for (Student s : allStudents) {
-	    System.out.println(s);
-	}
+		for (Student s : allStudents) {
+			System.out.println(s);
+		}
 
-    }
+	}
 }
